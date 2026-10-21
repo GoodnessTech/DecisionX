@@ -1,0 +1,14 @@
+{
+  "network": "BOT Chain Mainnet",
+  "chainId": 677,
+  "contractAddress": "0x0AC8D8508398b90d09ce494ae24DEA1450BfEFc9",
+  "deployerAddress": "0x34a19B30d9edD62424802d323E81c25599A9f02e",
+  "transactionHash": "0xe2f7d294d6aad538a591edee6296ae8bed3a7b927c1bd7d8990dbae67d721d21",
+  "blockNumber": 27463297,
+  "gasUsed": "2223389",
+  "effectiveGasPrice": "20000000000",
+  "deployedAt": "2026-10-21T11:24:53.508Z",
+  "explorerUrl": "https://scan.botchain.ai/address/0x0AC8D8508398b90d09ce494ae24DEA1450BfEFc9",
+  "compiler": "0.8.24",
+  "optimizerRuns": 1000
+}

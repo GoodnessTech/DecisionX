@@ -1,0 +1,14 @@
+{
+  "networkName": "BOT Chain Mainnet",
+  "chainId": 677,
+  "chainIdHex": "0x2a5",
+  "rpcUrl": "https://rpc.botchain.ai",
+  "nativeCurrency": {
+    "name": "BOT",
+    "symbol": "BOT",
+    "decimals": 18
+  },
+  "explorerUrl": "https://scan.botchain.ai",
+  "officialWebsite": "https://botchain.ai",
+  "contractAddress": "0x0AC8D8508398b90d09ce494ae24DEA1450BfEFc9"
+}

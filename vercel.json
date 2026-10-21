@@ -1,0 +1,11 @@
+{
+  "buildCommand": "cd \"DecisionX Frontend\" && npm install --legacy-peer-deps && npm run build",
+  "outputDirectory": "DecisionX Frontend/dist",
+  "framework": "vite",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}

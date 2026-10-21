@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+DecisionX Frontend/node_modules/
+
+# Production Build
+dist/
+DecisionX Frontend/dist/
+
+# Environment Variables & Secrets
+.env
+.env.local
+.env.*.local
+*.log
+
+# Hardhat & Solc
+cache/
+artifacts/
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+.bolt/

@@ -1,0 +1,16 @@
+{
+  "name": "decisionx",
+  "version": "1.0.0",
+  "private": true,
+  "description": "DecisionX Protocol - Parimutuel Decision Market on BOT Chain Mainnet",
+  "scripts": {
+    "build": "npm --prefix \"DecisionX Frontend\" run build",
+    "compile": "node scripts/compile.js",
+    "test": "node test/decisionx.test.mjs",
+    "deploy:mainnet": "node scripts/deploy.js"
+  },
+  "devDependencies": {
+    "ethers": "^6.14.0",
+    "solc": "0.8.24"
+  }
+}
