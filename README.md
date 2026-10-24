@@ -160,3 +160,40 @@ npm run dev
 
 - **BOT Chain Official Website**: [https://botchain.ai](https://botchain.ai)
 - **BOTScan Block Explorer**: [https://scan.botchain.ai](https://scan.botchain.ai)
+
+---
+
+## 9. BOT Chain Mainnet Multi-Wallet Interaction Verification
+
+As part of mainnet protocol validation, 6 unique wallets were generated and funded directly from the deployer account, executing **12 on-chain transactions** on the live DecisionX contract at the network minimum gas fee of **20 Gwei**:
+
+### Generated Wallets
+| # | Wallet Address | Explorer Link |
+|---|---|---|
+| 1 | `0x0502Ab48A6648a17314f0F80359f8cB58bE5D9A3` | [View on BOTScan](https://scan.botchain.ai/address/0x0502Ab48A6648a17314f0F80359f8cB58bE5D9A3) |
+| 2 | `0x923762803415C8e5FBfCaf41ae16Fdd57F57cb48` | [View on BOTScan](https://scan.botchain.ai/address/0x923762803415C8e5FBfCaf41ae16Fdd57F57cb48) |
+| 3 | `0x83Aa44E8Ea502810E13927A54f58582d0C4fAEE1` | [View on BOTScan](https://scan.botchain.ai/address/0x83Aa44E8Ea502810E13927A54f58582d0C4fAEE1) |
+| 4 | `0x59aDC538030B6D058946fc792C237aE42aC7715f` | [View on BOTScan](https://scan.botchain.ai/address/0x59aDC538030B6D058946fc792C237aE42aC7715f) |
+| 5 | `0xf9118F7a701551979A8b64fE121AD30c66D965cE` | [View on BOTScan](https://scan.botchain.ai/address/0xf9118F7a701551979A8b64fE121AD30c66D965cE) |
+| 6 | `0x74Ce0883Ba0d15741e1768BA433F3a6bDE8dE265` | [View on BOTScan](https://scan.botchain.ai/address/0x74Ce0883Ba0d15741e1768BA433F3a6bDE8dE265) |
+
+### 12 Protocol Transactions
+| Tx | Action / Description | Caller | Block | Gas Used | Fee (BOT) | Transaction Hash |
+|---|---|---|---|---|---|---|
+| 1 | Create Decision #1 (AI Compute vs DeFi) | `0x0502...D9A3` | 27812114 | 438,060 | 0.0087612 | [`0x2e6c...56a1`](https://scan.botchain.ai/tx/0x2e6cd48605045165e5d7abcda109d6573c706c2486d30347b2f9217a83a556a1) |
+| 2 | Stake 0.001 BOT on Decision #1 (Option 0) | `0x0502...D9A3` | 27812118 | 122,987 | 0.00245974 | [`0x81ab...30e3`](https://scan.botchain.ai/tx/0x81abbfaacc5200a67b10d98c4c72d7aad6c6890f8fcef03096eb26d95f0630e3) |
+| 3 | Stake 0.0015 BOT on Decision #1 (Option 1) | `0x9237...cb48` | 27812122 | 105,899 | 0.00211798 | [`0x43d7...67e7`](https://scan.botchain.ai/tx/0x43d7a76dee9ca2a9edde03ccab235d0aee29d6e2b8686b94b1975d2e6ff767e7) |
+| 4 | Stake 0.001 BOT on Decision #1 (Option 0) | `0x83Aa...AEE1` | 27812126 | 88,787 | 0.00177574 | [`0x6602...f949`](https://scan.botchain.ai/tx/0x660232920902e660cec75e147f694bf6add09968196990d78103e0a206b8f949) |
+| 5 | Stake 0.0012 BOT on Decision #1 (Option 1) | `0x59aD...715f` | 27812130 | 88,799 | 0.00177598 | [`0x9d63...5c81`](https://scan.botchain.ai/tx/0x9d63002a92dfb419f0b82f9090bb610ad1b6e9adaf2fa1e732a280b3a2b05c81) |
+| 6 | Stake 0.0008 BOT on Decision #1 (Option 0) | `0xf911...65cE` | 27812134 | 88,787 | 0.00177574 | [`0x1b1f...146e`](https://scan.botchain.ai/tx/0x1b1f0388aa3a5188118c112d65c83a96eef068ee1f689ae4526b30be6cba146e) |
+| 7 | Stake 0.0014 BOT on Decision #1 (Option 1) | `0x74Ce...E265` | 27812138 | 88,799 | 0.00177598 | [`0xbaf2...92bd`](https://scan.botchain.ai/tx/0xbaf26f296265aac3fa2b5abdd8af2b6b08dc8e6cfdbb43f52651099560c192bd) |
+| 8 | Create Decision #2 (LP Rewards vs Grants) | `0x9237...cb48` | 27812143 | 443,763 | 0.00887526 | [`0xdcc9...3b80`](https://scan.botchain.ai/tx/0xdcc91fbdbe257f778864bbc2631416175943f15d0b285da11501831b57153b80) |
+| 9 | Stake 0.001 BOT on Decision #2 (Option 0) | `0x0502...D9A3` | 27812157 | 122,987 | 0.00245974 | [`0x05dd...36e3`](https://scan.botchain.ai/tx/0x05dd1cda13ee3271144f43e4a738f4f5c84c3f04314655642127918777f436e3) |
+| 10 | Stake 0.001 BOT on Decision #2 (Option 1) | `0x83Aa...AEE1` | 27812174 | 105,899 | 0.00211798 | [`0xfdf4...d1c5`](https://scan.botchain.ai/tx/0xfdf4632ee8692e74dbe15ed150c97a119755915fb189df5989bd5f79dcccd1c5) |
+| 11 | Stake 0.0015 BOT on Decision #2 (Option 0) | `0x59aD...715f` | 27812184 | 88,787 | 0.00177574 | [`0xfb74...4682`](https://scan.botchain.ai/tx/0xfb74a95248cb063a7e5a4f3774b7c7f4134ca3e56c8937e9a93b242933064682) |
+| 12 | Stake 0.001 BOT on Decision #2 (Option 1) | `0x74Ce...E265` | 27812189 | 88,799 | 0.00177598 | [`0x0217...5334`](https://scan.botchain.ai/tx/0x0217225637df599a833bb439fbd447b64cd88d281ff6b05ced78f1c7e4995334) |
+
+- **Total Gas Consumed Across 12 Transactions**: `1,872,353 gas`
+- **Total Protocol Gas Cost**: `0.03744706 BOT` (at `20 Gwei`)
+- **JSON Evidence File**: [mainnet_transactions_report.json](file:///c:/Users/Goodness/Desktop/Projects/DecisionX/mainnet_transactions_report.json)
+

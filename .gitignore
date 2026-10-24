@@ -11,6 +11,7 @@ DecisionX Frontend/dist/
 .env.local
 .env.*.local
 *.log
+generated_wallets.json
 
 # Hardhat & Solc
 cache/

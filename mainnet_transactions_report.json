@@ -1,0 +1,243 @@
+{
+  "network": "BOT Chain Mainnet",
+  "chainId": 677,
+  "contractAddress": "0x0AC8D8508398b90d09ce494ae24DEA1450BfEFc9",
+  "deployerAddress": "0x34a19B30d9edD62424802d323E81c25599A9f02e",
+  "initialDeployerBalance": "0.186882148 BOT",
+  "finalDeployerBalance": "0.100362148 BOT",
+  "walletsCreatedCount": 6,
+  "wallets": [
+    {
+      "walletNumber": 1,
+      "address": "0x0502Ab48A6648a17314f0F80359f8cB58bE5D9A3",
+      "explorerUrl": "https://scan.botchain.ai/address/0x0502Ab48A6648a17314f0F80359f8cB58bE5D9A3"
+    },
+    {
+      "walletNumber": 2,
+      "address": "0x923762803415C8e5FBfCaf41ae16Fdd57F57cb48",
+      "explorerUrl": "https://scan.botchain.ai/address/0x923762803415C8e5FBfCaf41ae16Fdd57F57cb48"
+    },
+    {
+      "walletNumber": 3,
+      "address": "0x83Aa44E8Ea502810E13927A54f58582d0C4fAEE1",
+      "explorerUrl": "https://scan.botchain.ai/address/0x83Aa44E8Ea502810E13927A54f58582d0C4fAEE1"
+    },
+    {
+      "walletNumber": 4,
+      "address": "0x59aDC538030B6D058946fc792C237aE42aC7715f",
+      "explorerUrl": "https://scan.botchain.ai/address/0x59aDC538030B6D058946fc792C237aE42aC7715f"
+    },
+    {
+      "walletNumber": 5,
+      "address": "0xf9118F7a701551979A8b64fE121AD30c66D965cE",
+      "explorerUrl": "https://scan.botchain.ai/address/0xf9118F7a701551979A8b64fE121AD30c66D965cE"
+    },
+    {
+      "walletNumber": 6,
+      "address": "0x74Ce0883Ba0d15741e1768BA433F3a6bDE8dE265",
+      "explorerUrl": "https://scan.botchain.ai/address/0x74Ce0883Ba0d15741e1768BA433F3a6bDE8dE265"
+    }
+  ],
+  "fundingTransactions": [
+    {
+      "walletNumber": 1,
+      "address": "0x0502Ab48A6648a17314f0F80359f8cB58bE5D9A3",
+      "amountSent": "0.018 BOT",
+      "txHash": "0x9519468a13bc5736a4bca95102a376aa16380adec8d657bdd3a20be7dd22708f",
+      "blockNumber": 27812081,
+      "gasUsed": "21000"
+    },
+    {
+      "walletNumber": 2,
+      "address": "0x923762803415C8e5FBfCaf41ae16Fdd57F57cb48",
+      "amountSent": "0.018 BOT",
+      "txHash": "0x88228381f3375fe71a8f6ad5f4cf1956f4760760214a242c585bc03e7807aaea",
+      "blockNumber": 27812091,
+      "gasUsed": "21000"
+    },
+    {
+      "walletNumber": 3,
+      "address": "0x83Aa44E8Ea502810E13927A54f58582d0C4fAEE1",
+      "amountSent": "0.012 BOT",
+      "txHash": "0xbac96d91039c604463d6b28f981f3ab11eb9a28c2e3305589e24c8b7ad65ff53",
+      "blockNumber": 27812096,
+      "gasUsed": "21000"
+    },
+    {
+      "walletNumber": 4,
+      "address": "0x59aDC538030B6D058946fc792C237aE42aC7715f",
+      "amountSent": "0.012 BOT",
+      "txHash": "0xcad1f0a1b0f122d57f72b2977a403367ee9e1c1bddf1268ff83f7708934c37f8",
+      "blockNumber": 27812099,
+      "gasUsed": "21000"
+    },
+    {
+      "walletNumber": 5,
+      "address": "0xf9118F7a701551979A8b64fE121AD30c66D965cE",
+      "amountSent": "0.012 BOT",
+      "txHash": "0xe3fcc41847183a38a2996c5070180ed5dee0a8f6bcf6e34692ae904970617139",
+      "blockNumber": 27812104,
+      "gasUsed": "21000"
+    },
+    {
+      "walletNumber": 6,
+      "address": "0x74Ce0883Ba0d15741e1768BA433F3a6bDE8dE265",
+      "amountSent": "0.012 BOT",
+      "txHash": "0x9fdf5fec1bc015f7251a9be343bf7e73971e4a8ecec4b0b3421727de7ed8a5c3",
+      "blockNumber": 27812109,
+      "gasUsed": "21000"
+    }
+  ],
+  "projectTransactionsCount": 12,
+  "projectTransactions": [
+    {
+      "txNumber": 1,
+      "description": "Create Decision #1 (AI Compute vs DeFi Ecosystem)",
+      "caller": "0x0502Ab48A6648a17314f0F80359f8cB58bE5D9A3",
+      "contract": "0x0AC8D8508398b90d09ce494ae24DEA1450BfEFc9",
+      "txHash": "0x2e6cd48605045165e5d7abcda109d6573c706c2486d30347b2f9217a83a556a1",
+      "blockNumber": 27812114,
+      "gasUsed": "438060",
+      "gasPriceGwei": "20",
+      "gasFeeBot": "0.0087612",
+      "explorerUrl": "https://scan.botchain.ai/tx/0x2e6cd48605045165e5d7abcda109d6573c706c2486d30347b2f9217a83a556a1"
+    },
+    {
+      "txNumber": 2,
+      "description": "Wallet 1 Stakes 0.001 BOT on Decision #1, Option 0 (AI Subnets)",
+      "caller": "0x0502Ab48A6648a17314f0F80359f8cB58bE5D9A3",
+      "contract": "0x0AC8D8508398b90d09ce494ae24DEA1450BfEFc9",
+      "txHash": "0x81abbfaacc5200a67b10d98c4c72d7aad6c6890f8fcef03096eb26d95f0630e3",
+      "blockNumber": 27812118,
+      "gasUsed": "122987",
+      "gasPriceGwei": "20",
+      "gasFeeBot": "0.00245974",
+      "explorerUrl": "https://scan.botchain.ai/tx/0x81abbfaacc5200a67b10d98c4c72d7aad6c6890f8fcef03096eb26d95f0630e3"
+    },
+    {
+      "txNumber": 3,
+      "description": "Wallet 2 Stakes 0.0015 BOT on Decision #1, Option 1 (DeFi Ecosystem)",
+      "caller": "0x923762803415C8e5FBfCaf41ae16Fdd57F57cb48",
+      "contract": "0x0AC8D8508398b90d09ce494ae24DEA1450BfEFc9",
+      "txHash": "0x43d7a76dee9ca2a9edde03ccab235d0aee29d6e2b8686b94b1975d2e6ff767e7",
+      "blockNumber": 27812122,
+      "gasUsed": "105899",
+      "gasPriceGwei": "20",
+      "gasFeeBot": "0.00211798",
+      "explorerUrl": "https://scan.botchain.ai/tx/0x43d7a76dee9ca2a9edde03ccab235d0aee29d6e2b8686b94b1975d2e6ff767e7"
+    },
+    {
+      "txNumber": 4,
+      "description": "Wallet 3 Stakes 0.001 BOT on Decision #1, Option 0 (AI Subnets)",
+      "caller": "0x83Aa44E8Ea502810E13927A54f58582d0C4fAEE1",
+      "contract": "0x0AC8D8508398b90d09ce494ae24DEA1450BfEFc9",
+      "txHash": "0x660232920902e660cec75e147f694bf6add09968196990d78103e0a206b8f949",
+      "blockNumber": 27812126,
+      "gasUsed": "88787",
+      "gasPriceGwei": "20",
+      "gasFeeBot": "0.00177574",
+      "explorerUrl": "https://scan.botchain.ai/tx/0x660232920902e660cec75e147f694bf6add09968196990d78103e0a206b8f949"
+    },
+    {
+      "txNumber": 5,
+      "description": "Wallet 4 Stakes 0.0012 BOT on Decision #1, Option 1 (DeFi Ecosystem)",
+      "caller": "0x59aDC538030B6D058946fc792C237aE42aC7715f",
+      "contract": "0x0AC8D8508398b90d09ce494ae24DEA1450BfEFc9",
+      "txHash": "0x9d63002a92dfb419f0b82f9090bb610ad1b6e9adaf2fa1e732a280b3a2b05c81",
+      "blockNumber": 27812130,
+      "gasUsed": "88799",
+      "gasPriceGwei": "20",
+      "gasFeeBot": "0.00177598",
+      "explorerUrl": "https://scan.botchain.ai/tx/0x9d63002a92dfb419f0b82f9090bb610ad1b6e9adaf2fa1e732a280b3a2b05c81"
+    },
+    {
+      "txNumber": 6,
+      "description": "Wallet 5 Stakes 0.0008 BOT on Decision #1, Option 0 (AI Subnets)",
+      "caller": "0xf9118F7a701551979A8b64fE121AD30c66D965cE",
+      "contract": "0x0AC8D8508398b90d09ce494ae24DEA1450BfEFc9",
+      "txHash": "0x1b1f0388aa3a5188118c112d65c83a96eef068ee1f689ae4526b30be6cba146e",
+      "blockNumber": 27812134,
+      "gasUsed": "88787",
+      "gasPriceGwei": "20",
+      "gasFeeBot": "0.00177574",
+      "explorerUrl": "https://scan.botchain.ai/tx/0x1b1f0388aa3a5188118c112d65c83a96eef068ee1f689ae4526b30be6cba146e"
+    },
+    {
+      "txNumber": 7,
+      "description": "Wallet 6 Stakes 0.0014 BOT on Decision #1, Option 1 (DeFi Ecosystem)",
+      "caller": "0x74Ce0883Ba0d15741e1768BA433F3a6bDE8dE265",
+      "contract": "0x0AC8D8508398b90d09ce494ae24DEA1450BfEFc9",
+      "txHash": "0xbaf26f296265aac3fa2b5abdd8af2b6b08dc8e6cfdbb43f52651099560c192bd",
+      "blockNumber": 27812138,
+      "gasUsed": "88799",
+      "gasPriceGwei": "20",
+      "gasFeeBot": "0.00177598",
+      "explorerUrl": "https://scan.botchain.ai/tx/0xbaf26f296265aac3fa2b5abdd8af2b6b08dc8e6cfdbb43f52651099560c192bd"
+    },
+    {
+      "txNumber": 8,
+      "description": "Create Decision #2 (LP Rewards vs Dev Grants)",
+      "caller": "0x923762803415C8e5FBfCaf41ae16Fdd57F57cb48",
+      "contract": "0x0AC8D8508398b90d09ce494ae24DEA1450BfEFc9",
+      "txHash": "0xdcc91fbdbe257f778864bbc2631416175943f15d0b285da11501831b57153b80",
+      "blockNumber": 27812143,
+      "gasUsed": "443763",
+      "gasPriceGwei": "20",
+      "gasFeeBot": "0.00887526",
+      "explorerUrl": "https://scan.botchain.ai/tx/0xdcc91fbdbe257f778864bbc2631416175943f15d0b285da11501831b57153b80"
+    },
+    {
+      "txNumber": 9,
+      "description": "Wallet 1 Stakes 0.001 BOT on Decision #2, Option 0 (LP Rewards)",
+      "caller": "0x0502Ab48A6648a17314f0F80359f8cB58bE5D9A3",
+      "contract": "0x0AC8D8508398b90d09ce494ae24DEA1450BfEFc9",
+      "txHash": "0x05dd1cda13ee3271144f43e4a738f4f5c84c3f04314655642127918777f436e3",
+      "blockNumber": 27812157,
+      "gasUsed": "122987",
+      "gasPriceGwei": "20",
+      "gasFeeBot": "0.00245974",
+      "explorerUrl": "https://scan.botchain.ai/tx/0x05dd1cda13ee3271144f43e4a738f4f5c84c3f04314655642127918777f436e3"
+    },
+    {
+      "txNumber": 10,
+      "description": "Wallet 3 Stakes 0.001 BOT on Decision #2, Option 1 (Dev Grants)",
+      "caller": "0x83Aa44E8Ea502810E13927A54f58582d0C4fAEE1",
+      "contract": "0x0AC8D8508398b90d09ce494ae24DEA1450BfEFc9",
+      "txHash": "0xfdf4632ee8692e74dbe15ed150c97a119755915fb189df5989bd5f79dcccd1c5",
+      "blockNumber": 27812174,
+      "gasUsed": "105899",
+      "gasPriceGwei": "20",
+      "gasFeeBot": "0.00211798",
+      "explorerUrl": "https://scan.botchain.ai/tx/0xfdf4632ee8692e74dbe15ed150c97a119755915fb189df5989bd5f79dcccd1c5"
+    },
+    {
+      "txNumber": 11,
+      "description": "Wallet 4 Stakes 0.0015 BOT on Decision #2, Option 0 (LP Rewards)",
+      "caller": "0x59aDC538030B6D058946fc792C237aE42aC7715f",
+      "contract": "0x0AC8D8508398b90d09ce494ae24DEA1450BfEFc9",
+      "txHash": "0xfb74a95248cb063a7e5a4f3774b7c7f4134ca3e56c8937e9a93b242933064682",
+      "blockNumber": 27812184,
+      "gasUsed": "88787",
+      "gasPriceGwei": "20",
+      "gasFeeBot": "0.00177574",
+      "explorerUrl": "https://scan.botchain.ai/tx/0xfb74a95248cb063a7e5a4f3774b7c7f4134ca3e56c8937e9a93b242933064682"
+    },
+    {
+      "txNumber": 12,
+      "description": "Wallet 6 Stakes 0.001 BOT on Decision #2, Option 1 (Dev Grants)",
+      "caller": "0x74Ce0883Ba0d15741e1768BA433F3a6bDE8dE265",
+      "contract": "0x0AC8D8508398b90d09ce494ae24DEA1450BfEFc9",
+      "txHash": "0x0217225637df599a833bb439fbd447b64cd88d281ff6b05ced78f1c7e4995334",
+      "blockNumber": 27812189,
+      "gasUsed": "88799",
+      "gasPriceGwei": "20",
+      "gasFeeBot": "0.00177598",
+      "explorerUrl": "https://scan.botchain.ai/tx/0x0217225637df599a833bb439fbd447b64cd88d281ff6b05ced78f1c7e4995334"
+    }
+  ],
+  "summary": {
+    "totalGasUsed": "1872353",
+    "totalGasCostBot": "0.03744706 BOT",
+    "gasPriceUsed": "20 Gwei"
+  }
+}
