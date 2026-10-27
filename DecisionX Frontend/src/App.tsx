@@ -29,6 +29,12 @@ import {
 import { ethers, BrowserProvider, JsonRpcProvider, Contract, formatEther, parseEther } from 'ethers';
 import contractConfig from './contracts/config.json';
 import DecisionXArtifact from './contracts/DecisionX.json';
+import {
+  buildCreateDecisionParams,
+  parseDecisionResult,
+  parseUserPositionResult,
+  validateCreateDecisionForm,
+} from './lib/decisionCodec.ts';
 
 type View = 'Overview' | 'Decision Markets' | 'Create Decision' | 'My Positions' | 'Activity' | 'Documentation';
 type MarketStatus = 'Active' | 'Closing soon' | 'Closed' | 'Awaiting resolution' | 'Resolved' | 'Cancelled' | 'Preview';
@@ -321,15 +327,16 @@ function App() {
 
       for (let i = 1; i <= count; i++) {
         try {
-          const d = await contract.getDecision(i);
-          const totalPoolRaw = BigInt(d.totalPool.toString());
+          // getDecision returns (core, meta, options, pools)
+          const d = parseDecisionResult(i, await contract.getDecision(i));
+          const totalPoolRaw = d.totalPoolRaw;
           const totalPoolStr = formatEther(totalPoolRaw);
-          const optionCount = Number(d.optionCount);
+          const optionCount = d.options.length;
 
           const now = Math.floor(Date.now() / 1000);
-          const cutoff = Number(d.forecastCutoff);
-          const deadline = Number(d.resolutionDeadline);
-          const statusCode = Number(d.status);
+          const cutoff = d.forecastCutoff;
+          const deadline = d.resolutionDeadline;
+          const statusCode = d.statusCode;
 
           let status: MarketStatus = 'Active';
           if (statusCode === 3) {
@@ -344,38 +351,15 @@ function App() {
             status = 'Closing soon';
           }
 
-          const options: DecisionOption[] = [];
-          for (let optIdx = 0; optIdx < optionCount; optIdx++) {
-            const optData = d.options[optIdx];
-            const optPoolRaw = BigInt(optData.totalPool.toString());
-            let percent = optionCount > 0 ? 100 / optionCount : 0;
-            if (totalPoolRaw > 0n) {
-              percent = Number((optPoolRaw * 10000n) / totalPoolRaw) / 100;
-            }
-            options.push({
-              index: optIdx,
-              name: optData.name,
-              pool: formatEther(optPoolRaw),
-              poolRaw: optPoolRaw,
-              percent,
-            });
-          }
+          const options: DecisionOption[] = d.options.map((opt) => ({
+            index: opt.index,
+            name: opt.name,
+            pool: formatEther(opt.poolRaw),
+            poolRaw: opt.poolRaw,
+            percent: opt.percent,
+          }));
 
-          // Parse metadata title/description
-          let title = `Decision #${i}`;
-          let desc = d.metadataUri || 'On-chain parimutuel decision market';
-          let org = 'BOT Chain Community';
-          let metric = 'Verified on-chain outcome criteria';
-
-          if (d.metadataUri && d.metadataUri.startsWith('{')) {
-            try {
-              const parsed = JSON.parse(d.metadataUri);
-              if (parsed.title) title = parsed.title;
-              if (parsed.description) desc = parsed.description;
-              if (parsed.org) org = parsed.org;
-              if (parsed.metric) metric = parsed.metric;
-            } catch (_) {}
-          }
+          const { title, org, description: desc, metric } = d;
 
           const decisionItem: Decision = {
             id: i,
@@ -394,7 +378,7 @@ function App() {
             totalPoolRaw,
             options,
             metric,
-            evidenceUri: d.metadataUri,
+            evidenceUri: d.evidenceUri,
             isRealOnChain: true,
             accent: i % 3 === 0 ? 'green' : i % 2 === 0 ? 'blue' : 'orange',
           };
@@ -402,13 +386,14 @@ function App() {
 
           // Check user positions if connected
           if (account) {
-            const pos = await contract.getUserPosition(i, account);
-            const totalStakedRaw = BigInt(pos.totalStaked.toString());
-            const claimed = Boolean(pos.claimed);
+            // getUserPosition returns (stakesByOption, totalUserStake, claimed)
+            const pos = parseUserPositionResult(await contract.getUserPosition(i, account));
+            const totalStakedRaw = pos.totalUserStake;
+            const claimed = pos.claimed;
 
             if (totalStakedRaw > 0n) {
               for (let optIdx = 0; optIdx < optionCount; optIdx++) {
-                const optStakeRaw = BigInt(pos.optionStakes[optIdx].toString());
+                const optStakeRaw = pos.stakesByOption[optIdx] ?? 0n;
                 if (optStakeRaw > 0n) {
                   const isWinningOpt = statusCode === 2 && Number(d.winningOption) === optIdx;
                   positions.push({
@@ -1251,6 +1236,24 @@ function CreateDecision({
       return;
     }
 
+    const form = {
+      title,
+      org,
+      description,
+      options,
+      metricName,
+      metricMethod,
+      forecastDays,
+      resolutionDays,
+      resolverAddress,
+    };
+    const validationError = validateCreateDecisionForm(form, account);
+    if (validationError) {
+      setErrorMsg(validationError.message);
+      setStep(validationError.step);
+      return;
+    }
+
     setIsSubmitting(true);
     setErrorMsg(null);
     try {
@@ -1258,25 +1261,8 @@ function CreateDecision({
       const signer = await provider.getSigner();
       const contract = new Contract(contractConfig.contractAddress, DecisionXArtifact.abi, signer);
 
-      const now = Math.floor(Date.now() / 1000);
-      const cutoff = now + parseInt(forecastDays, 10) * 86400;
-      const deadline = now + parseInt(resolutionDays, 10) * 86400;
-
-      const metadata = JSON.stringify({
-        title,
-        org,
-        description,
-        metric: `${metricName}: ${metricMethod}`,
-      });
-
-      const params = {
-        title,
-        metadataUri: metadata,
-        optionNames: options,
-        forecastCutoff: cutoff,
-        resolutionDeadline: deadline,
-        resolver: resolverAddress || account,
-      };
+      // Must match DecisionX.CreateDecisionParams field-for-field.
+      const params = buildCreateDecisionParams(form, account, Math.floor(Date.now() / 1000));
 
       const tx = await contract.createDecision(params);
       await tx.wait();

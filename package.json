@@ -6,7 +6,7 @@
   "scripts": {
     "build": "npm --prefix \"DecisionX Frontend\" run build",
     "compile": "node scripts/compile.js",
-    "test": "node test/decisionx.test.mjs",
+    "test": "node test/decisionx.test.mjs && node test/frontend-codec.test.mjs",
     "deploy:mainnet": "node scripts/deploy.js"
   },
   "devDependencies": {
